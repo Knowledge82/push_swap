@@ -1,0 +1,89 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/04 13:54:54 by vdarsuye          #+#    #+#             */
+/*   Updated: 2024/12/14 14:41:08 by vdarsuye         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+int	is_sorted(t_node *stack)
+{
+	if (stack == NULL || stack->next == NULL)
+		return (1);
+	while (stack->next != NULL)
+	{
+		if (stack->number > stack->next->number)
+			return (0);
+		stack = stack->next;
+	}
+	return (1);
+}
+
+void	parse_arguments(int argc, char **argv, t_node **a)
+{
+	int	i;
+
+	i = 1;
+	if (argc < 2)
+		error_exit();
+	while (i < argc)
+	{
+		add_to_end(a, ft_atoi(argv[i]));
+		i++;
+	}
+}
+
+void	free_stack(t_node **stack)
+{
+	t_node	*current;
+
+	while (*stack)
+	{
+		current = *stack;
+		*stack = (*stack)->next;
+		free(current);
+	}
+}
+
+void	choose_sort(int argc, t_node **a, t_node **b)
+{
+	if (argc == 3)
+		sort_two(a);
+	else if (argc == 4)
+		sort_three(a);
+	else if ((argc == 5) || (argc == 6))
+		sort_five(a, b);
+	else
+		sort_large(a, b);
+}
+
+int	main(int argc, char **argv)
+{
+	t_node	*a;
+	t_node	*b;
+
+	a = NULL;
+	b = NULL;
+	parse_arguments(argc, argv, &a);
+	check_duplicates(a);
+	check_limits(a);
+	if (is_sorted(a))
+	{
+		free_stack(&a);
+		return (0);
+	}
+	put_index(&a);
+	if (argc > 1)
+	{
+		choose_sort(argc, &a, &b);
+		free_stack(&a);
+		free_stack(&b);
+	}
+	return (0);
+}
