@@ -6,7 +6,7 @@
 #    By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 12:51:10 by vdarsuye          #+#    #+#              #
-#    Updated: 2024/12/14 14:16:15 by vdarsuye         ###   ########.fr        #
+#    Updated: 2024/12/14 16:05:02 by vdarsuye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+	@rm -f $(OBJS)
 	@make fclean -C $(LIBFT_DIR)
 	@echo "$(RED)Executable $(NAME) removed.$(RESET)"
 
