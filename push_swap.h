@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:39:37 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/14 15:04:32 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/14 15:25:03 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 # include "LIBFT/libft.h"
 # include "LIBFT/ft_printf.h"
 
-typedef struct s_node	t_node;
+typedef struct s_node
 {
-	t_node	*next;
 	int		index;
 	int		has_index;
 	int		number;
-}
+	struct s_node	*next;
+}	t_node;
 
 // Operations
 void	sa(t_node **a);
