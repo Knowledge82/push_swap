@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 11:23:12 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/14 12:40:23 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/14 18:18:05 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ t_node	*create_node(int data)
 	}
 	new_node->number = data;
 	new_node->next = NULL;
+	new_node->has_index = 0;
 	return (new_node);
 }
 
