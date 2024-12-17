@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:41:15 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/14 18:16:15 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/14 18:35:07 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,8 +92,6 @@ void	put_index(t_node **a)
 	int		size;
 
 	size = stack_size(*a);
-	min_node = *a;
-	current = *a;
 	index = 0;
 	while (index < size)
 	{
