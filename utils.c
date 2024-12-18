@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:41:15 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/14 18:35:07 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:37:12 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,20 +38,6 @@ int	find_min(t_node *stack)
 	return (min_index);
 }
 
-int	find_max(t_node *stack)
-{
-	int	max_value;
-
-	max_value = stack->number;
-	while (stack != NULL)
-	{
-		if (stack->number > max_value)
-			max_value = stack->number;
-		stack = stack->next;
-	}
-	return (max_value);
-}
-
 void	move_to_top(t_node **a, int min_index)
 {
 	int	size;
@@ -75,12 +61,6 @@ void	move_to_top(t_node **a, int min_index)
 			min_index--;
 		}
 	}
-}
-
-void	move_back(t_node **a, t_node **b)
-{
-	while (*b)
-		pa(a, b);
 }
 
 void	put_index(t_node **a)

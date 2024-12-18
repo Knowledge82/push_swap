@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:54:54 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/14 14:41:08 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:38:32 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,19 @@ void	parse_arguments(int argc, char **argv, t_node **a)
 
 	i = 1;
 	if (argc < 2)
-		error_exit();
+		return ;
 	while (i < argc)
 	{
-		add_to_end(a, ft_atoi(argv[i]));
-		i++;
+		if (is_number(argv[i]) == 0)
+		{
+			add_to_end(a, ft_atol(argv[i]));
+			i++;
+		}
+		else
+		{
+			free_stack(a);
+			error_exit();
+		}
 	}
 }
 
@@ -82,6 +90,7 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		choose_sort(argc, &a, &b);
+		print_stack(a);
 		free_stack(&a);
 		free_stack(&b);
 	}

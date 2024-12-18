@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/14 12:27:01 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/14 14:05:55 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:13:17 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,10 @@ int	is_number(const char *str)
 		return (0);
 	while (str[i])
 	{
+		if ((str[i] == '-' || str[i] == '+') && ft_isdigit(str[i + 1]))
+			i++;
 		if (!ft_isdigit(str[i]))
-			error_exit();
+			return (1);
 		i++;
 	}
 	return (0);

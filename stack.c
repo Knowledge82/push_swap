@@ -6,13 +6,13 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 11:23:12 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/14 18:18:05 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/18 12:43:09 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_node	*create_node(int data)
+t_node	*create_node(long data)
 {
 	t_node	*new_node;
 
@@ -28,7 +28,7 @@ t_node	*create_node(int data)
 	return (new_node);
 }
 
-void	add_to_end(t_node **a, int data)
+void	add_to_end(t_node **a, long data)
 {
 	t_node	*new_node;
 	t_node	*current;

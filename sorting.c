@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:06:25 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/14 16:15:29 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:34:18 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,21 @@ void	sort_three(t_node **a)
 	first = *a;
 	second = (*a)->next;
 	third = second->next;
-	if (first->number > second->number && first->number > third->number)
-		ra(a);
-	if (second->number > third->number)
+	if (first->number > second->number && second->number > third->number)
+	{
+		sa(a);
 		rra(a);
-	if (first->number > second->number)
+	}
+	else if (first->number > third->number && third->number > second->number)
+		ra(a);
+	else if (second->number > first->number && first->number > third->number)
+		rra(a);
+	else if (second->number > third->number && third->number > first->number)
+	{
+		sa(a);
+		ra(a);
+	}
+	else if (third->number > first->number && first->number > second->number)
 		sa(a);
 }
 

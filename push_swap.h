@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:39:37 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/14 16:30:53 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:40:02 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ typedef struct s_node
 {
 	int				index;
 	int				has_index;
-	int				number;
+	long			number;
 	struct s_node	*next;
 }	t_node;
 
@@ -47,19 +47,17 @@ void	sort_five(t_node **a, t_node **b);
 void	sort_large(t_node **a, t_node **b);
 
 // Stack functions
-t_node	*create_node(int data);
+t_node	*create_node(long data);
 int		stack_size(t_node *stack);
 void	free_stack(t_node **stack);
-void	add_to_end(t_node **a, int data);
+void	add_to_end(t_node **a, long data);
 void	print_stack(t_node *stack);
 void	put_index(t_node **a);
 
 // Utils
 int		is_sorted(t_node *stack);
 int		find_min(t_node *stack);
-int		find_max(t_node *stack);
 void	move_to_top(t_node **a, int min_index);
-void	move_back(t_node **a, t_node **b);
 void	error_exit(void);
 int		is_number(const char *str);
 int		check_duplicates(t_node *head);

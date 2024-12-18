@@ -6,7 +6,7 @@
 #    By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/08 15:32:43 by vdarsuye          #+#    #+#              #
-#    Updated: 2024/12/09 17:19:34 by vdarsuye         ###   ########.fr        #
+#    Updated: 2024/12/18 12:34:07 by vdarsuye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ SRC = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
       ft_memcpy.c ft_strlcat.c ft_strncmp.c ft_memset.c ft_strlcpy.c \
       ft_memmove.c ft_memcmp.c ft_strchr.c ft_strrchr.c ft_strnstr.c \
       ft_memchr.c ft_atoi.c ft_calloc.c ft_substr.c ft_strjoin.c \
-      ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
+      ft_strtrim.c ft_split.c ft_itoa.c ft_atol.c ft_strmapi.c ft_striteri.c \
       ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
       ft_printf.c print_hexa.c print_pointer.c print_char.c print_str.c \
       print_unsigned.c print_int.c
