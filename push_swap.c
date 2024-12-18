@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:54:54 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/18 13:38:32 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2024/12/18 13:43:04 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,6 @@ int	main(int argc, char **argv)
 	if (argc > 1)
 	{
 		choose_sort(argc, &a, &b);
-		print_stack(a);
 		free_stack(&a);
 		free_stack(&b);
 	}
