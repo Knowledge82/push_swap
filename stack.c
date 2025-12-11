@@ -19,7 +19,7 @@ t_node	*create_node(long data)
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
 	{
-		ft_printf("Error: memory allocation failed\n");
+		printf("Error: memory allocation failed\n");
 		exit(1);
 	}
 	new_node->number = data;
@@ -59,13 +59,14 @@ int	stack_size(t_node *a)
 	}
 	return (size);
 }
-
+/*
 void	print_stack(t_node *stack)
 {
 	while (stack)
 	{
-		ft_printf("%d ", stack->number);
+		printf("%ld ", stack->number);
 		stack = stack->next;
 	}
-	ft_printf("\n");
+	printf("\n");
 }
+*/

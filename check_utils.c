@@ -55,19 +55,19 @@ int	is_number(const char *str)
 		if ((str[i] == '-' || str[i] == '+') && ft_isdigit(str[i + 1]))
 			i++;
 		if (!ft_isdigit(str[i]))
-			return (1);
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
 void	error_exit(void)
 {
-	write(2, "Error\n", 6);
+	write(STDERR_FILENO, "Error\n", 6);
 	exit(EXIT_FAILURE);
 }
 
 void	print_operation(char *operation)
 {
-	ft_printf("%s\n", operation);
+	printf("%s\n", operation);
 }

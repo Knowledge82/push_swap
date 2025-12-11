@@ -34,7 +34,7 @@ void	parse_arguments(int argc, char **argv, t_node **a)
 		return ;
 	while (i < argc)
 	{
-		if (is_number(argv[i]) == 0)
+		if (is_number(argv[i]))
 		{
 			add_to_end(a, ft_atol(argv[i]));
 			i++;
@@ -68,7 +68,8 @@ void	choose_sort(int argc, t_node **a, t_node **b)
 	else if ((argc == 5) || (argc == 6))
 		sort_five(a, b);
 	else
-		sort_large(a, b);
+		turk_sort(a, b);
+	//	sort_large(a, b);
 }
 
 int	main(int argc, char **argv)

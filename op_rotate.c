@@ -11,44 +11,39 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-//rotate
-void	ra(t_node **a)
+
+static void	rotate_silent(t_node **stack)
 {
 	t_node	*first;
 	t_node	*last;
 
-	if (*a == NULL || (*a)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	first = *a;
-	*a = first->next;
-	last = *a;
+	first = *stack;
+	*stack = first->next;
+	last = *stack;
 	while (last->next != NULL)
 		last = last->next;
 	last->next = first;
 	first->next = NULL;
+}
+
+//rotate
+void	ra(t_node **a)
+{
+	rotate_silent(a);
 	print_operation("ra");
 }
 
 void	rb(t_node **b)
 {
-	t_node	*first;
-	t_node	*last;
-
-	if (*b == NULL || (*b)->next == NULL)
-		return ;
-	first = *b;
-	*b = first->next;
-	last = *b;
-	while (last->next != NULL)
-		last = last->next;
-	last->next = first;
-	first->next = NULL;
+	rotate_silent(b);
 	print_operation("rb");
 }
 
 void	rr(t_node **a, t_node **b)
 {
-	ra(a);
-	rb(b);
+	rotate_silent(a);
+	rotate_silent(b);
 	print_operation("rr");
 }

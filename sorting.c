@@ -63,27 +63,48 @@ void	sort_five(t_node **a, t_node **b)
 	return ;
 }
 
+int	get_max_bits(int size)
+{
+	int	bits;
+
+	bits = 0;
+	while ((size - 1) >> bits)
+		bits++;
+	return (bits);
+}
+
 void	sort_large(t_node **a, t_node **b)
 {
 	int	size;
-	int	bit_pos;
-	int	count;
+	int	max_bits;
+	int	i;
+	int	j;
 
 	size = stack_size(*a);
-	bit_pos = 1;
-	while (!is_sorted(*a))
+	max_bits = get_max_bits(size);
+	
+	printf("DEBUG: max_bits = %d\n", max_bits);  // ОТЛАДКА
+
+	i = 0;
+	while (i < max_bits)
 	{
-		count = 0;
-		while (*a != NULL && count < size)
+
+		printf("DEBUG: проход %d\n", i);  // ОТЛАДКА
+
+		j = 0;
+		while (j < size)
 		{
-			if (((*a)->index & bit_pos) == 0)
+			if ((((*a)->index >> i) & 1) == 0)
 				pb(a, b);
 			else
 				ra(a);
-			count++;
+			j++;
 		}
 		while (*b != NULL)
 			pa(b, a);
-		bit_pos = bit_pos * 2;
+		i++;
 	}
+
+	printf("DEBUG: всего проходов: %d\n", i);  // ОТЛАДКА
+
 }

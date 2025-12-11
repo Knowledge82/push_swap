@@ -12,40 +12,36 @@
 
 #include "push_swap.h"
 
-//swap
-void	sa(t_node **a)
+static void	swap_silent(t_node **stack)
 {
 	t_node	*first;
 	t_node	*second;
 
-	if (*a == NULL || (*a)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	first = *a;
+	first = *stack;
 	second = first->next;
 	first->next = second->next;
 	second->next = first;
-	*a = second;
+	*stack = second;
+}
+
+//swap
+void	sa(t_node **a)
+{
+	swap_silent(a);
 	print_operation("sa");
 }
 
 void	sb(t_node **b)
 {
-	t_node	*first;
-	t_node	*second;
-
-	if (*b == NULL || (*b)->next == NULL)
-		return ;
-	first = *b;
-	second = first->next;
-	first->next = second->next;
-	second->next = first;
-	*b = second;
+	swap_silent(b);
 	print_operation("sb");
 }
 
 void	ss(t_node **a, t_node **b)
 {
-	sa(a);
-	sb(b);
+	swap_silent(a);
+	swap_silent(b);
 	print_operation("ss");
 }

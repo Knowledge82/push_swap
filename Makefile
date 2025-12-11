@@ -27,12 +27,12 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Lib path
 
-LIBFT_DIR = LIBFT
+LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 # sources and objects
 
-SRCS = push_swap.c op_swap.c op_push.c op_rotate.c op_reverse_rotate.c sorting.c utils.c check_utils.c stack.c
+SRCS = push_swap.c op_swap.c op_push.c op_rotate.c op_reverse_rotate.c sorting.c utils.c check_utils.c stack.c turk.c
 OBJS = $(SRCS:.c=.o)
 
 # rules
