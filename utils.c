@@ -6,12 +6,12 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:41:15 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/18 13:37:12 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2025/12/13 17:17:03 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+/*
 int	find_min(t_node *stack)
 {
 	int		i;
@@ -37,31 +37,58 @@ int	find_min(t_node *stack)
 	}
 	return (min_index);
 }
+*/
 
-void	move_to_top(t_node **a, int min_index)
+int	get_position(t_node *stack, int index)
 {
-	int	size;
+	int		pos;
+	t_node	*current;
 
-	size = stack_size(*a);
-	if (min_index == 0)
-		return ;
-	if (min_index > size / 2)
+	pos = 0;
+	current = stack;
+	while (current)
 	{
-		while (min_index < size)
-		{
-			rra(a);
-			min_index++;
-		}
+		if (current->index == index)
+			return (pos);
+		current = current->next;
+		pos++;
 	}
-	else
-	{
-		while (min_index > 0)
-		{
-			ra(a);
-			min_index--;
-		}
-	}
+	return (-1);
 }
+
+// Найти минимальный индекс в стеке
+int	get_min_index(t_node *stack)
+{
+	int		min;
+	t_node	*current;
+
+	if (!stack)
+		return (-1);
+	min = stack->index;
+	current = stack->next;
+	while (current)
+	{
+		if (current->index < min)
+			min = current->index;
+		current = current->next;
+	}
+	return (min);
+}
+
+// Найти максимальный индекс в стеке
+int	get_max_index(t_node *stack)
+{
+	int		max;
+	t_node	*current;
+
+	if (!stack)
+		return (-1);
+	max = stack->index;
+	current = stack->next;
+	while (current)
+	{
+		if (current->index > max)
+			max = current->index;
 
 void	put_index(t_node **a)
 {

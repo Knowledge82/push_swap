@@ -1,62 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   turk.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/13 11:08:42 by vdarsuye          #+#    #+#             */
+/*   Updated: 2025/12/13 17:16:51 by vdarsuye         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
-
-/* Возвращает позицию элемента с заданным индексом в стеке
-	0 = наверху, 1 = второй и т.д.
-*/
-int	get_position(t_node *stack, int index)
-{
-	int		pos;
-	t_node	*current;
-
-	pos = 0;
-	current = stack;
-	while (current)
-	{
-		if (current->index == index)
-			return (pos);
-		current = current->next;
-		pos++;
-	}
-	return (-1);
-}
-
-// Найти минимальный индекс в стеке
-int	get_min_index(t_node *stack)
-{
-	int		min;
-	t_node	*current;
-
-	if (!stack)
-		return (-1);
-	min = stack->index;
-	current = stack->next;
-	while (current)
-	{
-		if (current->index < min)
-			min = current->index;
-		current = current->next;
-	}
-	return (min);
-}
-
-// Найти максимальный индекс в стеке
-int	get_max_index(t_node *stack)
-{
-	int		max;
-	t_node	*current;
-
-	if (!stack)
-		return (-1);
-	max = stack->index;
-	current = stack->next;
-	while (current)
-	{
-		if (current->index > max)
-			max = current->index;
-		current = current->next;
-	}
-	return (max);
-}
 
 int	find_target_in_b(t_node *b, int index_a)
 {
@@ -325,46 +279,27 @@ void	turk_sort(t_node **a, t_node **b)
 	int	cheapest_index;
 	int	target_index;
 
-	//ФАЗА 1: пушим в B всё, кроме 3 элементов
-	// Пушим первые 2 без раздумий
 	if (stack_size(*a) > 3)
 		pb(a, b);
 	if (stack_size(*a) > 3)
 		pb(a, b);
-	// остальные пушим по стоимости
 	while (stack_size(*a) > 3)
 	{
 		cheapest_index = find_cheapest_in_a(*a, *b);
+		//Ищем наибольший элемент в B, который меньше нашего
 		target_index = find_target_in_b(*b, cheapest_index);
-
-		// поднимаем оба элемента наверх
 		bring_both_to_top(a, b, cheapest_index, target_index);
-
-		// пушим
 		pb(a, b);
 	}
-
-	// ФАЗА 2: сортируем 3 элемента в А
 	sort_three(a);
-
-	// ФАЗА 3: возвращаем из B в A
-
 	while (*b)
 	{
 		cheapest_index = find_cheapest_in_b(*a, *b);
+		//Ищем наименьший элемент в A, который больше нашего
 		target_index = find_target_in_a(*a, cheapest_index);
-
-
-		// поднимаем оба наверх
 		bring_both_to_top(a, b, target_index, cheapest_index);
-
-		// пушим обратно
 		pa(b, a);
 	}
-
-	// ФАЗА 4: финальная ротация (минимум наверх)
-
 	cheapest_index = get_min_index(*a);
-
 	bring_to_top_a(a, cheapest_index);
 }
