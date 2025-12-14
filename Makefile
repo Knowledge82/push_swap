@@ -6,7 +6,7 @@
 #    By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/04 12:51:10 by vdarsuye          #+#    #+#              #
-#    Updated: 2024/12/14 16:05:02 by vdarsuye         ###   ########.fr        #
+#    Updated: 2025/12/14 18:51:35 by vdarsuye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,20 @@ LIBFT = $(LIBFT_DIR)/libft.a
 
 # sources and objects
 
-SRCS = push_swap.c op_swap.c op_push.c op_rotate.c op_reverse_rotate.c sorting.c utils.c check_utils.c stack.c turk.c
+SRCS = cost.c \
+       cost_utils.c \
+       move.c \
+       push_swap.c \
+       op_swap.c \
+       op_push.c \
+       op_rotate.c \
+       op_reverse_rotate.c \
+       sorting.c \
+       utils.c \
+       check_utils.c \
+       stack.c \
+       turk.c
+
 OBJS = $(SRCS:.c=.o)
 
 # rules

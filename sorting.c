@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:06:25 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/18 13:34:18 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2025/12/14 19:05:38 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,8 @@ void	sort_five(t_node **a, t_node **b)
 	size = stack_size(*a);
 	while (size > 3)
 	{
-		min_index = find_min(*a);
-		move_to_top(a, min_index);
+		min_index = get_min_index(*a);
+		move_to_top_a(a, min_index);
 		pb(a, b);
 		size--;
 	}
@@ -73,7 +73,7 @@ int	get_max_bits(int size)
 	return (bits);
 }
 
-void	sort_large(t_node **a, t_node **b)
+void	radix_sort(t_node **a, t_node **b)
 {
 	int	size;
 	int	max_bits;
@@ -82,15 +82,9 @@ void	sort_large(t_node **a, t_node **b)
 
 	size = stack_size(*a);
 	max_bits = get_max_bits(size);
-	
-	printf("DEBUG: max_bits = %d\n", max_bits);  // ОТЛАДКА
-
 	i = 0;
 	while (i < max_bits)
 	{
-
-		printf("DEBUG: проход %d\n", i);  // ОТЛАДКА
-
 		j = 0;
 		while (j < size)
 		{
@@ -104,7 +98,4 @@ void	sort_large(t_node **a, t_node **b)
 			pa(b, a);
 		i++;
 	}
-
-	printf("DEBUG: всего проходов: %d\n", i);  // ОТЛАДКА
-
 }

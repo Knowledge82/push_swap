@@ -6,38 +6,14 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 14:41:15 by vdarsuye          #+#    #+#             */
-/*   Updated: 2025/12/13 17:17:03 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2025/12/14 18:54:55 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-int	find_min(t_node *stack)
-{
-	int		i;
-	int		min_index;
-	int		min_value;
-	t_node	*current;
 
-	if (stack == NULL)
-		return (-1);
-	current = stack;
-	min_index = 0;
-	min_value = stack->number;
-	i = 0;
-	while (current)
-	{
-		if (current->number < min_value)
-		{
-			min_value = current->number;
-			min_index = i;
-		}
-		current = current->next;
-		i++;
-	}
-	return (min_index);
-}
-*/
+//Находит позицию (0, 1, 2, .. .) элемента с заданным индексом в стеке.
+//Нужна, чтобы знать, сколько операций нужно для поднятия элемента наверх.
 
 int	get_position(t_node *stack, int index)
 {
@@ -57,6 +33,8 @@ int	get_position(t_node *stack, int index)
 }
 
 // Найти минимальный индекс в стеке
+// Нужна в find_target_in_a(), когда нет подходящего target
+// и в финальной ротации - чтобы поднять минимум наверх
 int	get_min_index(t_node *stack)
 {
 	int		min;
@@ -76,6 +54,7 @@ int	get_min_index(t_node *stack)
 }
 
 // Найти максимальный индекс в стеке
+// Нужна в find_target_in_b() - когда элемент меньше всех в B, target = max.
 int	get_max_index(t_node *stack)
 {
 	int		max;
@@ -89,6 +68,10 @@ int	get_max_index(t_node *stack)
 	{
 		if (current->index > max)
 			max = current->index;
+		current = current->next;
+	}
+	return (max);
+}
 
 void	put_index(t_node **a)
 {
@@ -117,4 +100,30 @@ void	put_index(t_node **a)
 		min_node->has_index = 1;
 		index++;
 	}
+}
+
+int	find_min(t_node *stack)
+{
+	int		i;
+	int		min_index;
+	int		min_value;
+	t_node	*current;
+
+	if (stack == NULL)
+		return (-1);
+	current = stack;
+	min_index = 0;
+	min_value = stack->number;
+	i = 0;
+	while (current)
+	{
+		if (current->number < min_value)
+		{
+			min_value = current->number;
+			min_index = i;
+		}
+		current = current->next;
+		i++;
+	}
+	return (min_index);
 }

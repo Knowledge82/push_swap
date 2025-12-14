@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 13:54:54 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/18 13:43:04 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2025/12/14 16:10:39 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,6 @@ void	choose_sort(int argc, t_node **a, t_node **b)
 		sort_five(a, b);
 	else
 		turk_sort(a, b);
-	//	sort_large(a, b);
 }
 
 int	main(int argc, char **argv)
