@@ -6,7 +6,7 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 12:39:37 by vdarsuye          #+#    #+#             */
-/*   Updated: 2025/12/14 18:55:39 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2025/12/15 15:39:00 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_cost_data
 	int	size_b;
 }	t_cost_data;
 
-//push_swap.c
+//parsing.c
 int		is_sorted(t_node *stack);
 void	parse_arguments(int argc, char **argv, t_node **a);
 void	free_stack(t_node **stack);
@@ -47,7 +47,6 @@ int		check_limits(t_node *head);
 int		check_duplicates(t_node *head);
 int		is_number(const char *str);
 void	error_exit(void);
-void	print_operation(char *operation);
 
 //cost.c
 int		calculate_total_cost(t_node *a, t_node *b, int index_a);
@@ -79,6 +78,12 @@ int		get_max_index(t_node *stack);
 void	put_index(t_node **a);
 
 // Operations
+// without print
+void	swap(t_node **stack);
+void	push(t_node **src, t_node **dest);
+void	rotate(t_node **stack);
+void	reverse_rotate(t_node **stack);
+// with print
 void	sa(t_node **a);
 void	sb(t_node **b);
 void	ss(t_node **a, t_node **b);
@@ -102,5 +107,8 @@ int		get_max_bits(int size);
 int		find_target_in_b(t_node *b, int index_a);
 int		find_target_in_a(t_node *a, int index_b);
 void	turk_sort(t_node **a, t_node **b);
+
+// checker_utils_bonus.c
+int		read_and_execute(t_node **a, t_node **b);
 
 #endif

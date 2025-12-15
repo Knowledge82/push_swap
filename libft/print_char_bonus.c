@@ -1,39 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_push.c                                          :+:      :+:    :+:   */
+/*   print_char_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 18:03:43 by vdarsuye          #+#    #+#             */
-/*   Updated: 2025/12/15 14:38:29 by vdarsuye         ###   ########.fr       */
+/*   Created: 2025/11/22 17:16:44 by vdarsuye          #+#    #+#             */
+/*   Updated: 2025/12/15 12:28:11 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-// w/o print
-void	push(t_node **src, t_node **dest)
+void	print_char_with_flags(char c, t_flags *flags, int *len)
 {
-	t_node	*temp;
+	int	padding;
 
-	if (*src == NULL)
+	if (flags->no_flags)
+	{
+		print_char(c, len);
 		return ;
-	temp = *src;
-	*src = (*src)->next;
-	temp->next = *dest;
-	*dest = temp;
-}
-
-// with print
-void	pa(t_node **b, t_node **a)
-{
-	push(b, a);
-	ft_printf("pa\n");
-}
-
-void	pb(t_node **a, t_node **b)
-{
-	push(a, b);
-	ft_printf("pb\n");
+	}
+	padding = 0;
+	if (flags->width > 1)
+		padding = flags->width - 1;
+	if (flags->minus)
+	{
+		print_char(c, len);
+		while (padding-- > 0)
+			print_char(' ', len);
+	}
+	else
+	{
+		while (padding-- > 0)
+			print_char(' ', len);
+		print_char(c, len);
+	}
 }

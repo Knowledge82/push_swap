@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_push.c                                          :+:      :+:    :+:   */
+/*   print_hexa.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 18:03:43 by vdarsuye          #+#    #+#             */
-/*   Updated: 2025/12/15 14:38:29 by vdarsuye         ###   ########.fr       */
+/*   Created: 2024/08/15 15:39:03 by vdarsuye          #+#    #+#             */
+/*   Updated: 2025/12/15 12:28:11 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-// w/o print
-void	push(t_node **src, t_node **dest)
+void	print_hexa(unsigned int nb, const char c, int *len)
 {
-	t_node	*temp;
+	char	*base;
 
-	if (*src == NULL)
-		return ;
-	temp = *src;
-	*src = (*src)->next;
-	temp->next = *dest;
-	*dest = temp;
-}
-
-// with print
-void	pa(t_node **b, t_node **a)
-{
-	push(b, a);
-	ft_printf("pa\n");
-}
-
-void	pb(t_node **a, t_node **b)
-{
-	push(a, b);
-	ft_printf("pb\n");
+	if (c == 'x')
+		base = "0123456789abcdef";
+	else
+		base = "0123456789ABCDEF";
+	if (nb >= 16)
+		print_hexa((nb / 16), c, len);
+	print_char(base[nb % 16], len);
 }

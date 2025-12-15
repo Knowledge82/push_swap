@@ -6,7 +6,7 @@
 #    By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/08 15:32:43 by vdarsuye          #+#    #+#              #
-#    Updated: 2025/11/24 20:03:59 by vdarsuye         ###   ########.fr        #
+#    Updated: 2025/12/15 13:06:47 by vdarsuye         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,8 +38,11 @@ SRC = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c \
     is_numeric_arg.c ft_atol.c ft_atoll.c ft_memset.c ft_strcpy.c \
     ft_strlcpy.c ft_iswhitespace.c count_strings.c ft_strncpy.c \
     get_next_line.c get_next_line_utils.c ft_realloc.c ft_free_array.c \
-    ft_strmapi.c ft_striteri.c
-
+    ft_strmapi.c ft_striteri.c print_char.c print_pointer_bonus.c \
+    print_unsigned.c flags_bonus.c print_hexa_bonus.c  print_pointer.c \
+    flags_utils_bonus.c  print_hexa.c print_str_bonus.c ft_printf_bonus.c \
+    output_formatted.c print_int_bonus.c  print_str.c ft_printf.c \
+    print_char_bonus.c print_int.c print_unsigned_bonus.c
 
 BONUS_SRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 	    ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c \

@@ -1,39 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   op_push.c                                          :+:      :+:    :+:   */
+/*   print_char.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/12/04 18:03:43 by vdarsuye          #+#    #+#             */
-/*   Updated: 2025/12/15 14:38:29 by vdarsuye         ###   ########.fr       */
+/*   Created: 2024/08/15 14:18:37 by vdarsuye          #+#    #+#             */
+/*   Updated: 2025/12/15 12:28:11 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-// w/o print
-void	push(t_node **src, t_node **dest)
+void	print_char(char c, int *len)
 {
-	t_node	*temp;
-
-	if (*src == NULL)
-		return ;
-	temp = *src;
-	*src = (*src)->next;
-	temp->next = *dest;
-	*dest = temp;
-}
-
-// with print
-void	pa(t_node **b, t_node **a)
-{
-	push(b, a);
-	ft_printf("pa\n");
-}
-
-void	pb(t_node **a, t_node **b)
-{
-	push(a, b);
-	ft_printf("pb\n");
+	write(1, &c, 1);
+	(*len)++;
 }

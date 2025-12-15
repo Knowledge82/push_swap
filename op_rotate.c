@@ -6,13 +6,14 @@
 /*   By: vdarsuye <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/04 18:05:05 by vdarsuye          #+#    #+#             */
-/*   Updated: 2024/12/07 12:37:18 by vdarsuye         ###   ########.fr       */
+/*   Updated: 2025/12/15 14:42:38 by vdarsuye         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	rotate_silent(t_node **stack)
+// w/o print
+void	rotate(t_node **stack)
 {
 	t_node	*first;
 	t_node	*last;
@@ -28,22 +29,22 @@ static void	rotate_silent(t_node **stack)
 	first->next = NULL;
 }
 
-//rotate
+//with print
 void	ra(t_node **a)
 {
-	rotate_silent(a);
-	print_operation("ra");
+	rotate(a);
+	ft_printf("ra\n");
 }
 
 void	rb(t_node **b)
 {
-	rotate_silent(b);
-	print_operation("rb");
+	rotate(b);
+	ft_printf("rb\n");
 }
 
 void	rr(t_node **a, t_node **b)
 {
-	rotate_silent(a);
-	rotate_silent(b);
-	print_operation("rr");
+	rotate(a);
+	rotate(b);
+	ft_printf("rr\n");
 }
