@@ -1,5 +1,7 @@
 *This project has been created as part of the 42 curriculum by vdarsuye*
 
+> 🇬🇧 [English](README.md) | 🇷🇺 [Русский](README_RU.md) | 🇪🇸 [Español](README_ES.md)
+
 # 🔄 Push_swap
 
 ## 📋 Description

@@ -1,5 +1,7 @@
 *Этот проект создан в рамках учебной программы 42 пользователем vdarsuye*
 
+> 🇬🇧 [English](README.md) | 🇷🇺 [Русский](README_RU.md) | 🇪🇸 [Español](README_ES.md)
+
 # 🔄 Push_swap
 
 ## 📋 Описание
