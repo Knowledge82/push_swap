@@ -2,6 +2,10 @@
 
 > 🇬🇧 [English](README.md) | 🇺🇦 [Українська](README_UK.md) | 🇷🇺 [Русский](README_RU.md) | 🇪🇸 [Español](README_ES.md)
 
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api? type=waving&height=180&color=gradient&text=Push_swap%20Project%20%7C%2042%20Barcelona&fontAlign=50&fontAlignY=40&fontSize=40&desc=Sorting%20Algorithm%20with%20Turk%20Sort&descAlignY=60&descAlign=50" />
+</p>
+
 # 🔄 Push_swap
 
 ## 📋 Descripción
@@ -230,4 +234,14 @@ Todo el código fue escrito, comprendido y probado por el autor. La IA sirvió c
 
 ## 📄 Licencia
 
-Este proyecto es parte del currículum de la escuela 42 y está destinado a fines educativos. 
+Este proyecto es parte del currículum de la escuela 42 y está destinado a fines educativos.
+
+---
+
+<p align="center">
+  <b>⭐ Si te ha sido útil este proyecto, dale una estrella! ⭐</b>
+</p>
+
+<p align="center">
+  Hecho con ❤️ y mucho ☕ en 42 Barcelona
+</p> 
